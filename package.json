@@ -1,14 +1,30 @@
 {
   "name": "nodeUserLoginApp",
-  "version": "0.0.0",
-  "description": "",
+   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+ 
+  "author": "Martin",
   "license": "ISC",
+  "homepage": "https://github.com/marb61a/nodeuserloginapp",
   "dependencies": {
-    "express": "^4.12.3"
+    "body-parser": "^1.12.0",
+    "cookie-parser": "^1.3.4",
+    "debug": "^2.1.1",
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "morgan": "^1.5.1",
+    "serve-favicon": "^2.2.0",
+    "mongodb": "^2.0.28",
+    "connect-flash": "^0.1.1",
+    "express-validator": "^2.9.1",
+    "express-session": "^1.11.1",
+    "express-messages": "0.0.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-http": "^0.2.2",
+    "multer": "^0.1.8"
   }
 }
