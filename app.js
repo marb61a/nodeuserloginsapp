@@ -72,7 +72,7 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
+// catch 404 errors and forward to the error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
@@ -92,8 +92,8 @@ if (app.get('env') === 'development') {
   });
 }
 
-// production error handler but as is important
-// no stacktraces leaked to user
+// production error handler but is important
+// no stacktraces will be leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
