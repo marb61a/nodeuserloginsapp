@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var expressValidator = require('express-validator');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
@@ -16,6 +17,7 @@ var db = mongoose.connection;
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//var app = express();
 var app = express();
 
 // Setup the view engine
@@ -45,9 +47,9 @@ app.use(passport.session());
 // Validator
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
-      var namespace = param.split('.')
-      , root    = namespace.shift()
-      , formParam = root;
+      var namespace = param.split('.'), 
+          root    = namespace.shift(),
+          formParam = root;
 
     while(namespace.length) {
       formParam += '[' + namespace.shift() + ']';
