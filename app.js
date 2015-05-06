@@ -27,7 +27,7 @@ app.set('view engine', 'jade');
 // Multer will Handle File Uploads
 app.use(multer({dest:'./uploads'}));
 
-// uncomment after placing your favicon in /public
+// uncomment after placing a favicon in /public/images
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -68,6 +68,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+app.get('*', function(req, res, next){
+  res.locals.user = req.user || null;
   next();
 });
 
